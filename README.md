@@ -1,1 +1,1 @@
-# sigma
+### Collection of Sigma rules ###
