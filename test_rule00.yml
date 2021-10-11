@@ -1,0 +1,23 @@
+title: Test Rule00
+status: experimental
+description: Test the successful installation of Sigma Hunting App in Splunk
+references:
+    - None
+tags:
+    - attack.t1078
+    - attack.initial_access
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4624
+    condition: selection
+fields:
+    - EventCode
+    - signature
+    - Account_Name
+falsepositives:
+    - Benign
+    - Should result in lots of findings
+level: low
