@@ -1,0 +1,24 @@
+title: CVE-2021-42237 Sitecore Experience Platform Pre-Auth RCE
+status: experimental
+description: Sitecore XP 7.5 Initial Release to Sitecore XP 8.2 Update-7 is vulnerable to an insecure deserialization attack where it is possible to achieve remote command execution on the machine
+references:
+- http://packetstormsecurity.com/files/164988/Sitecore-Experience-Platform-XP-Remote-Code-Execution.html  
+- https://blog.assetnote.io/2021/11/02/sitecore-rce/
+- https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1000776
+author: Michael Kelley [twitter - w00d33_ | github - w00d33]
+date: 2021/12/03
+logsource:
+    product: windows
+    category: webserver
+detection:
+    selection:
+        cs-method: 'POST'
+        cs-uri|contains: '/sitecore/shell/ClientBin/Reporting/Report.ashx'
+    condition: selection
+fields:
+    - c-ip
+    - c-uri
+falsepositives:
+    - Unlikely
+    - Per Sitecore, the Report.ashx file is no longer used and can safely be removed
+level: critical
