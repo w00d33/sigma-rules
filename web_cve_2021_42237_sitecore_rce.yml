@@ -5,7 +5,7 @@ references:
 - http://packetstormsecurity.com/files/164988/Sitecore-Experience-Platform-XP-Remote-Code-Execution.html  
 - https://blog.assetnote.io/2021/11/02/sitecore-rce/
 - https://support.sitecore.com/kb?id=kb_article_view&sysparm_article=KB1000776
-author: Michael Kelley [twitter - w00d33_ | github - w00d33]
+author: Michael Kelley [@w00d33_]
 date: 2021/12/03
 logsource:
     product: windows
